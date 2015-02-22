@@ -10,6 +10,9 @@
   // Define globals exposed by Node.js.
   "node": true,
 
+  //surpress "expected an assignment or function call" warnings
+  "-W084": false,
+
 
   // Force all variable names to use either camelCase style or UPPER_CASE
   // with underscores.
