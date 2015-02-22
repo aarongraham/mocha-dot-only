@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^2.0.0",
+    "esprima": "^2.0.0",
     "jshint": "^2.6.0",
     "mocha": "^2.1.0"
   }
