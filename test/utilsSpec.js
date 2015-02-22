@@ -54,7 +54,7 @@ describe('utils', function() {
         });
 
         it('should call the callback once if called with undefined', function() {
-            var results = [];
+            var results = [],
 
                 callback = function(item) {
                     results.push(item);
@@ -63,6 +63,44 @@ describe('utils', function() {
             utils.traverseObject(undefined, callback);
 
             expect(results).to.deep.equal([undefined]);
+        });
+    });
+
+    describe('walkFolderStructure', function() {
+        it('should return all file paths in the nested folder structure', function(done) {
+            var folder = 'test/files/folder1',
+                expectedAnswer = [
+                    'test/files/folder1/flatfile',
+                    'test/files/folder1/folder2/nestedfile'
+                ];
+
+            utils.walkFolderStructure(folder, function(err, result) {
+                expect(err).to.be.null;
+                expect(result).to.deep.equal(expectedAnswer);
+                done();
+            });
+        });
+
+        it('should return files paths in flat folder structure', function(done) {
+            var folder = 'test/files/folder1/folder2',
+                expectedAnswer = [
+                    'test/files/folder1/folder2/nestedfile'
+                ];
+
+            utils.walkFolderStructure(folder, function(err, result) {
+                expect(err).to.be.null;
+                expect(result).to.deep.equal(expectedAnswer);
+                done();
+            });
+        });
+
+        it('should return error if folder does not exist', function(done) {
+            var folder = 'test/files/folderNotThere';
+
+            utils.walkFolderStructure(folder, function(err) {
+                expect(err).to.not.be.null;
+                done();
+            });
         });
     });
 });
