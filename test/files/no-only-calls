@@ -1,0 +1,9 @@
+describe('foo', function() {
+    it('bar', function() {
+        expect(foo).to.deep.equal(bar);
+    });
+
+    it('baz', function() {
+        expect(baz)).to.deep.equal(foo);
+    });
+});
