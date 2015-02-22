@@ -1,0 +1,32 @@
+{
+  "name": "mocha-dot-only",
+  "version": "0.0.0",
+  "description": "A command line tool to search for describe.only and it.only calls in mocha tests. Intended to be used as a git commit hook. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jshint index.js lib bin && mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aarongraham/mocha-dot-only.git"
+  },
+  "keywords": [
+    "mocha",
+    "only"
+  ],
+  "author": "Aaron Graham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aarongraham/mocha-dot-only/issues"
+  },
+  "homepage": "https://github.com/aarongraham/mocha-dot-only",
+  "preferGlobal": "true",
+  "bin": {
+    "mocha-dot-only": "bin/mocha-dot-only.js"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0"
+  }
+}
